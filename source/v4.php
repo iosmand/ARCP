@@ -4,14 +4,14 @@ $pin = $_GET['pin'];
 $wpi_pin = array(14, 14, 15, 18, 17, 27, 22, 23, 24);
 $sets = array(dh,dl);
 
-$read = shell_exec("raspi-gpio get $wpi_pin[$pin]");
+/*$read = shell_exec("raspi-gpio get $wpi_pin[$pin]");
 $read = explode("=", $read);
 $read = $read[1];
 $read = substr($read,0,-5);
 $read = $read*-1+1;
 //echo $read;
 
-//if($read!==$set)
+//if($read!==$set)*/
 
 	if($pin >= 1 && $pin <= 8){
 		if($set >= 0 && $set <= 1){
@@ -48,15 +48,4 @@ $read = $read*-1+1;
 	#echo "PIN $pin | ";
 	
 
-?>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
-</head>
-<body>
-
-<?php echo $button; ?> 
-
-</body>
-</html>
+echo $button; ?>
